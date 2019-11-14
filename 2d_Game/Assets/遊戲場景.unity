@@ -550,13 +550,14 @@ GameObject:
   - component: {fileID: 796074857}
   - component: {fileID: 796074856}
   - component: {fileID: 796074855}
+  - component: {fileID: 796074858}
   m_Layer: 0
   m_Name: Pratice object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &796074855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +604,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796074858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796074854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9139f000635348b09f65556f8e843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857026908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumplevel: 331
-  dead: 0
+  isdead: 0
 --- !u!58 &1457623210
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1396,7 +1409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1669138002
 AudioSource:
   m_ObjectHideFlags: 0
