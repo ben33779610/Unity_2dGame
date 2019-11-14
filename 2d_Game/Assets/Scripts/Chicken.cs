@@ -2,18 +2,9 @@
 
 public class Chicken : MonoBehaviour
 {
-
-    public int      jumplevel = 0; // 跳躍高度
+    [Header("跳躍高度")]    [Range(0,2000)]
+    public int      jumplevel = 0; 
+    [Header("是否死亡")]    
     public bool  dead;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

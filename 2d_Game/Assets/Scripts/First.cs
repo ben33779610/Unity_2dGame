@@ -10,6 +10,14 @@ public class First : MonoBehaviour
     public string prop = "藍色藥水";                 //字串      預設""
     public bool mission = true;             //布林值  預設false
 
+    [Header("血量")]  //[Header ("字串 ")]   
     public int hp = 100;
+    [Header("速度")]  [Range(0,2.00f)]
+    public float speed2;
+    [Header("死亡")]  [Tooltip("是否死亡,打勾:死亡,沒勾:活著")]
+    public bool dead;
+    [Header("魔力")]  [Range(0, 999)]
+    public int mp;
 
+    
 }
