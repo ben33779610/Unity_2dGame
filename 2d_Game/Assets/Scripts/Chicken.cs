@@ -12,7 +12,7 @@ public class Chicken : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-
+		
     }
     /// <summary>
     /// 死亡

@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: 0
   bestpoint: 0
+  tube: {fileID: 3823098900555509715, guid: d533eb8c3e85419438a0b9374d5f7528, type: 3}
 --- !u!4 &281061556
 Transform:
   m_ObjectHideFlags: 0
@@ -551,6 +552,7 @@ GameObject:
   - component: {fileID: 796074856}
   - component: {fileID: 796074855}
   - component: {fileID: 796074858}
+  - component: {fileID: 796074859}
   m_Layer: 0
   m_Name: Pratice object
   m_TagString: Untagged
@@ -565,7 +567,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796074854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdf6b526a1fdd9543b8258bcd76d9560, type: 3}
   m_Name: 
@@ -611,9 +613,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796074854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59c9139f000635348b09f65556f8e843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &796074859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796074854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3494641b5dbd3448d193d18f37ccbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &857026908
