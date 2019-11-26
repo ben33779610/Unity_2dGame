@@ -2,8 +2,13 @@
 
 public class LearnAPI : MonoBehaviour
 {
-    
-    private void Start()
+
+
+	public Transform transA;
+	public Transform transB;
+	public SpriteRenderer sprA;
+
+	private void Start()
     {
 		print("輸出訊息");
 
@@ -24,6 +29,15 @@ public class LearnAPI : MonoBehaviour
 		Debug.LogError("錯誤");
 		Debug.LogWarning("警告");
 		Debug.LogAssertion(true);
+
+
+
+		print(transA.position);
+		print(transB.position);
+
+		transA.position = new Vector3(-1, 0, 0);
+		sprA.flipX = true;
+		
 	}
 
 	private void Update()
@@ -34,7 +48,12 @@ public class LearnAPI : MonoBehaviour
 		{
 			print("s is pressed.");
 		}
+
+
+		transA.Rotate(0, 0, 2);
+		transA.localScale += new Vector3(0.1f, 0.1f, 0);
+		transA.Translate(0.1f, 0.1f, 0);
 	}
 
-
+	
 }

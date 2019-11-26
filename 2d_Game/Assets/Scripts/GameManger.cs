@@ -52,7 +52,7 @@ public class GameManger : MonoBehaviour
 	private void Start()
 	{
 		//重複調用invokrepeating ( 執行method名稱 , 延遲時間 , 隔幾秒執行一次)
-		InvokeRepeating("Generatetube", 0.5f, 1.0f);
+		InvokeRepeating("Generatetube", 0.5f, 3.0f);
 	}
 
 	private void Update()
