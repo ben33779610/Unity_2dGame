@@ -225,6 +225,7 @@ MonoBehaviour:
   point: 0
   bestpoint: 0
   tube: {fileID: 3823098900555509715, guid: d533eb8c3e85419438a0b9374d5f7528, type: 3}
+  goUI: {fileID: 0}
 --- !u!4 &281061556
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,10 +1181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed19260fb9620942a1614a843035698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumplevel: 331
+  jumplevel: 250
   isdead: 0
   goScore: {fileID: 1111761379}
   goGm: {fileID: 281061554}
+  r2D: {fileID: 1457623211}
+  gm: {fileID: 281061555}
 --- !u!58 &1457623210
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1630,7 +1633,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 163.51192, y: 0.28582168}
+  m_Size: {x: 1072, y: 0.28582168}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1677,18 +1680,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -15.980793, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 163.51192, y: 0.28582168}
+    newSize: {x: 1072, y: 0.28582168}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 99.59383, y: 0.25}
+  m_Size: {x: 131.55536, y: 0.25}
   m_EdgeRadius: 0
 --- !u!1 &2062679647
 GameObject:

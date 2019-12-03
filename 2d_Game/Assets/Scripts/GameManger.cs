@@ -6,8 +6,7 @@ public class GameManger : MonoBehaviour
     public int point;  //得分
     public int bestpoint;  //最高得分
 	public GameObject tube; //水管物件
-	
-
+	public GameObject goUI;
 	/// <summary>
 	/// 生成水管
 	/// </summary>
@@ -29,7 +28,7 @@ public class GameManger : MonoBehaviour
 	/// <summary>
     /// 加分
     /// </summary>
-    private void Pluspoint()
+    public void Pluspoint()
     {
 
     }
@@ -43,9 +42,10 @@ public class GameManger : MonoBehaviour
     /// <summary>
     /// 遊戲結束
     /// </summary>
-    private void GameEnd()
+    public void GameEnd()
     {
-
+		
+		goUI.SetActive(true);
     }
 
 
