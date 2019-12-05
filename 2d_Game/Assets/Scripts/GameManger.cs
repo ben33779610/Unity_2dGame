@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
 {
-    [Header("得分")]  [Range(0,999)]
-    public int point;  //得分
+    [Header("得分")]  
+    public int point = 0 ;  //得分
     public int bestpoint;  //最高得分
 	public GameObject tube; //水管物件
 	public GameObject goUI;
+	public Text textscore;//分數
+	public Text textbest;
 	/// <summary>
 	/// 生成水管
 	/// </summary>
 	private void Generatetube()
 	{
-		float rand = Random.Range(-1f, 0.6f);
+		if (Chicken.isdead) return;
+		float rand = Random.Range(-2.5f, 1.5f);
 		//Vector3 三為向量 x y z
 		
 		Vector3 pos = new Vector3(6.0f, rand, 0f);
@@ -28,17 +32,30 @@ public class GameManger : MonoBehaviour
 	/// <summary>
     /// 加分
     /// </summary>
-    public void Pluspoint()
+    public void Pluspoint(int add)
     {
-
-    }
+		point += add;
+		//textscore.text =  point+"";   
+		textscore.text = point.ToString();
+		if (point > 5)
+			Floor.speed += 10;
+		
+	}
     /// <summary>
     /// 最佳分數設定
     /// </summary>
     private void Bestpointset()
     {
 
-    }
+		bestpoint = PlayerPrefs.GetInt("best");
+		if (bestpoint < point)
+		{
+			bestpoint = point;
+			PlayerPrefs.SetInt("best",bestpoint);			
+		}
+		
+		textbest.text = bestpoint.ToString();
+	}
     /// <summary>
     /// 遊戲結束
     /// </summary>
@@ -46,7 +63,9 @@ public class GameManger : MonoBehaviour
     {
 		
 		goUI.SetActive(true);
-    }
+		Bestpointset();
+		Floor.speed = 0;
+	}
 
 
 	private void Start()
@@ -55,9 +74,6 @@ public class GameManger : MonoBehaviour
 		InvokeRepeating("Generatetube", 0.5f, 3.0f);
 	}
 
-	private void Update()
-	{
-		
-	}
+
 
 }
