@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManger : MonoBehaviour
@@ -10,6 +11,7 @@ public class GameManger : MonoBehaviour
 	public GameObject goUI;
 	public Text textscore;//分數
 	public Text textbest;
+	private int level;
 	/// <summary>
 	/// 生成水管
 	/// </summary>
@@ -37,9 +39,11 @@ public class GameManger : MonoBehaviour
 		point += add;
 		//textscore.text =  point+"";   
 		textscore.text = point.ToString();
-		if (point > 5)
-			Floor.speed += 10;
-		
+		if (point >= level)
+		{
+			Floor.speed += 1;
+			level += 5;
+		}
 	}
     /// <summary>
     /// 最佳分數設定
@@ -67,11 +71,25 @@ public class GameManger : MonoBehaviour
 		Floor.speed = 0;
 	}
 
+	public void Replay()
+	{
+		//Application.loadedLevel("遊戲場景"); //更換遊戲場景("場景名稱")
+		SceneManager.LoadScene("遊戲場景");
+		Floor.speed = 3;
+		
+	}
+
+	public void Exit()
+	{
+		Application.Quit();
+	}
 
 	private void Start()
 	{
+		level = 5;
 		//重複調用invokrepeating ( 執行method名稱 , 延遲時間 , 隔幾秒執行一次)
 		InvokeRepeating("Generatetube", 0.5f, 3.0f);
+
 	}
 
 

@@ -37,6 +37,10 @@ public class Chicken : MonoBehaviour
 			auo.PlayOneShot(auoJump, 1);
 			
 		}
+		if (Input.GetKeyDown(KeyCode.Mouse1))
+		{
+			r2D.gravityScale = 4;
+		}
 
 		//velocity剛體加速度
 		r2D.SetRotation(6 * r2D.velocity.y);
@@ -61,6 +65,23 @@ public class Chicken : MonoBehaviour
 		gm.Pluspoint(1);
     }
 
+
+
+
+	private void Start()
+	{
+		Chicken.isdead = false;
+		Screen.SetResolution(720, 1280, false); // 設定遊戲螢幕大小(寬,高,是否全螢幕)
+	}
+
+	private void Update()
+	{
+		
+		
+		Jump();
+		
+	}
+
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		//print(collision.gameObject.name);
@@ -78,14 +99,5 @@ public class Chicken : MonoBehaviour
 			Dead();
 		}
 
-	}
-
-
-	private void Update()
-	{
-		
-		
-		Jump();
-		
 	}
 }
