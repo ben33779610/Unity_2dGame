@@ -19,6 +19,9 @@ public class Chicken : MonoBehaviour
 
 	public AudioClip auoJump, auoHit, auoadd;
 
+	private float cd,curcd;
+	private bool canjump;
+
 	/// <summary>
 	/// 小雞跳
 	/// </summary>
@@ -29,13 +32,17 @@ public class Chicken : MonoBehaviour
 		//偵測到滑鼠左鍵點擊
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			goScore.SetActive(true);
-			goGm.SetActive(true);
-			r2D.gravityScale = 1;
-			r2D.Sleep();	//讓剛體重置
-			r2D.AddForce(new Vector2(0, jumplevel));  //y方向增加推力
-			auo.PlayOneShot(auoJump, 1);
-			
+			if (canjump)
+			{
+				goScore.SetActive(true);
+				goGm.SetActive(true);
+				r2D.gravityScale = 1;
+				r2D.Sleep();    //讓剛體重置
+				r2D.AddForce(new Vector2(0, jumplevel));  //y方向增加推力
+				auo.PlayOneShot(auoJump, 1);
+				curcd += Time.deltaTime;
+				canjump = false;
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.Mouse1))
 		{
@@ -44,6 +51,20 @@ public class Chicken : MonoBehaviour
 
 		//velocity剛體加速度
 		r2D.SetRotation(6 * r2D.velocity.y);
+	}
+
+	private void CanJump()
+	{
+		if (curcd >= cd || cd==0)
+		{
+			curcd = 0;
+			canjump = true;
+		}
+		else
+		{
+			curcd += Time.deltaTime;
+		}
+
 	}
     /// <summary>
     /// 死亡
@@ -72,13 +93,16 @@ public class Chicken : MonoBehaviour
 	{
 		Chicken.isdead = false;
 		Screen.SetResolution(720, 1280, false); // 設定遊戲螢幕大小(寬,高,是否全螢幕)
+		cd = 0.5f;
+		curcd = 0;
+		canjump = true;
 	}
 
 	private void Update()
 	{
-		
-		
+		CanJump();
 		Jump();
+		
 		
 	}
 
